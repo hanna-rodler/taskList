@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tasks</title>
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+</head>
+<body>
+<div id="TasksWrapper">
+	<form>
+		<div class="field">
+			<fieldset id="taskList">
+				<legend class="hField">Task List</legend>
+				<div class="row">
+					<div class="col-10 col"><label for="title">Title</label>
+						<label for="description">Description</label>
+					</div>
+					<div class="col-40 col">
+						<input type="text" name="title" id="title" tabindex="1" required>
+						<textarea name="description" id="description"
+						          rows="10" cols="100" tabindex="2" required></textarea>
+					</div>
+					<div class="col-20 col" id="moreMargin">
+						<div class="block">
+							<div id="dueDateDiv" class="taskField">
+								<label for="dueDate">Due Date</label><br>
+								<input type="date" id="dueDate" tabindex="3" required>
+							</div>
+							<div id="categDiv" class="taskField">
+								<label for="category">Category</label>
+								<select name="category" id="category" tabindex="4" required>
+									<option value="WHM">WHM</option>
+									<option value="OOP">OOP</option>
+									<option value="LP">LP</option>
+									<option value="DMA">DMA</option>
+									<option value="WA">WA</option>
+									<option value="EBU">EBU</option>
+								</select><br>
+							</div>
+						</div>
+					</div>
+					<div class="col col-15">
+						<div id="prioDiv" class="taskField">
+							<p>Priority</p>
+							<input type="radio" id="high" name="priority" value="high"
+							       required>
+							<label for="high">high</label><br>
+							<input type="radio" id="middle" name="priority" value="middle">
+							<label for="middle">middle</label><br>
+							<input type="radio" id="low" name="priority" value="low">
+							<label for="low">low</label><br>
+						</div>
+						<div id="TaskBtns" class="taskField">
+							<input type="button" value="Create New Task"
+							       id="newTask"><br>
+							<input type="button" value="Delete All Tasks"
+							       id="deleteAllTasks">
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+		<div class="field">
+			<fieldset id="filter">
+				<legend class="hField">Filter</legend>
+				<div id="filterField">
+					<div class="col-30 col">
+						<fieldset id="dateField">
+							<legend>Filter Date</legend>
+							<div class="block">
+								<label for="from">From</label>
+								<input type="date" id="from"><br>
+								<label for="to">To</label>
+								<input type="date" id="to"><br>
+								<input type="button" class="filterBtn" value="Filter"
+								       id="dateBtn"><br>
+							</div>
+						</fieldset>
+					</div>
+					<div class="col-25 col">
+						<fieldset id="priorityField">
+							<legend>Priority-Filter</legend>
+							<div class="block">
+								<input type="radio" name="prio" id="highP"
+								       value="highP">
+								<label for="highP">high</label><br>
+								<input type="radio" name="prio" id="middleP"
+								       value="middleP">
+								<label for="middleP">middle</label><br>
+								<input type="radio" name="prio" id="lowP"
+								       value="lowP">
+								<label for="lowP">low</label><br>
+								<input type="button" class="filterBtn" value="Filter"
+								       id="prioBtn"><br>
+							</div>
+						</fieldset>
+					</div>
+					<div class="col-25 col">
+						<fieldset id="categoryField">
+							<legend>Category Filter</legend>
+							<div class="block">
+								<select name="category" size="1" id="categoryFilter">
+									<option value="WHM">WHM</option>
+									<option value="OOP">OOP</option>
+									<option value="LP">LP</option>
+									<option value="DMA">DMA</option>
+									<option value="WA">WA</option>
+									<option value="EBU">EBU</option>
+								</select><br>
+								<input type="button" class="filterBtn" value="Filter"
+								       id="categoryBtn"><br>
+							</div>
+						</fieldset>
+					</div>
+					<div class="col-25 col">
+						<div class="block">
+							<input type="button" class="filterBtn" value="Reset Filter"
+							       id="resetFilter"><br>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+	</form>
+	<table>
+		<tr>
+			<th id="dateT">Date</th>
+			<th id="titleT">Title</th>
+			<th id="descriptionT">Description</th>
+			<th id="categoryT">Category</th>
+			<th id="prioT">Priority</th>
+			<td></td>
+		</tr>
+	</table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="JS/DOM-Operations.js"></script>
+</body>
+</html>
